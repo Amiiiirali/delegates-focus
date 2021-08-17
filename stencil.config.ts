@@ -16,6 +16,7 @@ export const config: Config = {
     },
     {
       type: 'www',
+      copy: [{ src: '../public', dest: 'build/public', warn: true }],
       serviceWorker: null, // disable service workers
     },
   ],
