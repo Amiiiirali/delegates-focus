@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
 
+    <!-- uncomment it for use dist-custom-elements-bundle output -->
+    <!-- <script src="/build/public/main.js"></script> -->
+
+    <!-- uncomment it for use dist output / lazyLoading components -->
     <script type="module" src="/build/delegates-focus-test.esm.js"></script>
     <script nomodule src="/build/delegates-focus-test.js"></script>
   </head>
@@ -18,5 +22,17 @@
 
     <div>Delegate Focus Not Enabled:</div>
     <no-delegates-focus class="set-focus"></no-delegates-focus>
+
+    <hr />
+    <button onclick="setFocus()">Set Focus</button>
+
+    <script>
+      function setFocus() {
+        const elms = document.querySelectorAll('.set-focus');
+        for (var i = 0; i < elms.length; i++) {
+          elms[i].focus();
+        }
+      }
+    </script>
   </body>
 </html>
